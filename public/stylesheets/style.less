@@ -1,8 +1,102 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+/******************************************************************************
+* Less CSS Document Structure Base Classes
+*******************************************************************************
+  Summary: CSS style .classes interfaces to common docuemnt elements 
+	with a Less property, a CSS class, to be accessed from othor Less docs.
+	
+ *	version: .01;
+ *	Author: Lee R Johnson;
+ * 	Date: 2009-7-28;
+ *	Defines: 'a named .property for sturctures of HTML elements';
 
-a {
-  color: #00B7FF;
-}
+	Interfaces: 
+----------------------------------------------	*/
+
+	.doc-html{}	
+	.doc-sections{}
+	
+	.h1-6{}	
+		.h4-6{}	
+		.h1-3{}	
+	.hodd{}	
+	.heven{}
+	
+	.text-blocks{}
+	
+	.list-blocks{} 
+		.lists{}
+			.items{}
+			
+	.text-format{}
+		.monospace{}
+		.notation{}
+	
+	.form-structs{}
+	.form-ui{}
+	.media{}
+	
+/* D.text-blocksocument Elements
+************************************************************ */
+	html,head,body 			{ .doc-html; 	}
+
+	header,nav,footer,div,section,article		{.doc-sections;	}
+
+/* Heading Elements
+************************************************************ */
+
+	.h1-3,.h4-6		{		.h1-6;			}
+									
+	h1,h2,h3		{ 		.h1-3; 		}
+	h4,h5,h6		{ 		.h4-6; 		}
+	
+	h1,h3,h5		{ 		.hodd;		}
+	h2,h4,h6		{ 		.heven;		}
+
+/* Text Block Elements
+*************************************************************/
+	
+	p,blockquote,pre	{		.text-blocks;		}
+	
+
+/* Head Elements (not used)
+*************************************************************/
+
+/* List Elements
+*************************************************************/
+	.lists,.items		{		.list-blocks;	}
+	
+	ol,ul,dl				{		.lists;		}
+	ol li, ul li,
+	dl dd,dl dt				{ 		.items;		}
+
+
+/* Text Formatting Elements (short List)
+**************************************************************/
+	a,address,.monospace,
+	.notation			{		.text-format;		}
+	
+	pre,code,kbd,samp,tt	{	.monospace;		}
+	
+	q,cite,dfn,abbr,
+	em,strong,
+	del,ins,sub,sup			{	.notation;		}
+
+/* Form Elements
+**************************************************************/
+	form,fieldset,legend{		.form-structs;		}
+	
+	input,textarea,select	{	.form-ui;		}
+	
+/* Image and Media Elements
+**************************************************************/
+
+video,
+img,object,embed		{			.media;				}
+
+
+/* Table Elements (don't use them)
+**************************************************************/
+
+/* Frame and Window Elements
+**************************************************************/
+ 
